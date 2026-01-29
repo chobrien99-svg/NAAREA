@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAAREA Timeline: Rise and Fall of a Nuclear Dream</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0f0f23 100%);
+            min-height: 100vh;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 50%, #ff006e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: #888;
+            font-weight: 300;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ff006e;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 5px;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg,
+                #00d4ff 0%,
+                #7b2cbf 30%,
+                #ff006e 60%,
+                #ff006e 100%);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 20px 60px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            text-align: left;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 35px;
+            width: 20px;
+            height: 20px;
+            background: #1a1a2e;
+            border: 4px solid;
+            border-radius: 50%;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:nth-child(odd)::before {
+            right: -10px;
+        }
+
+        .timeline-item:nth-child(even)::before {
+            left: -10px;
+        }
+
+        .timeline-item.rise::before {
+            border-color: #00d4ff;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+        }
+
+        .timeline-item.peak::before {
+            border-color: #7b2cbf;
+            box-shadow: 0 0 20px rgba(123, 44, 191, 0.5);
+        }
+
+        .timeline-item.fall::before {
+            border-color: #ff006e;
+            box-shadow: 0 0 20px rgba(255, 0, 110, 0.5);
+        }
+
+        .timeline-item:hover::before {
+            transform: scale(1.3);
+        }
+
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+        }
+
+        .timeline-item.rise .timeline-content::before {
+            background: linear-gradient(90deg, transparent, #00d4ff, transparent);
+        }
+
+        .timeline-item.peak .timeline-content::before {
+            background: linear-gradient(90deg, transparent, #7b2cbf, transparent);
+        }
+
+        .timeline-item.fall .timeline-content::before {
+            background: linear-gradient(90deg, transparent, #ff006e, transparent);
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .date {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        .timeline-item.rise .date {
+            color: #00d4ff;
+        }
+
+        .timeline-item.peak .date {
+            color: #7b2cbf;
+        }
+
+        .timeline-item.fall .date {
+            color: #ff006e;
+        }
+
+        .event-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .event-description {
+            color: #999;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .event-tag {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 15px;
+        }
+
+        .timeline-item.rise .event-tag {
+            background: rgba(0, 212, 255, 0.2);
+            color: #00d4ff;
+        }
+
+        .timeline-item.peak .event-tag {
+            background: rgba(123, 44, 191, 0.2);
+            color: #7b2cbf;
+        }
+
+        .timeline-item.fall .event-tag {
+            background: rgba(255, 0, 110, 0.2);
+            color: #ff006e;
+        }
+
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 60px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .legend-dot.rise {
+            background: #00d4ff;
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+        }
+
+        .legend-dot.peak {
+            background: #7b2cbf;
+            box-shadow: 0 0 10px rgba(123, 44, 191, 0.5);
+        }
+
+        .legend-dot.fall {
+            background: #ff006e;
+            box-shadow: 0 0 10px rgba(255, 0, 110, 0.5);
+        }
+
+        .legend-text {
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        footer p {
+            color: #555;
+            font-size: 0.85rem;
+        }
+
+        .quote-box {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 40px;
+            background: rgba(255, 0, 110, 0.05);
+            border-left: 4px solid #ff006e;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .quote-text {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #ccc;
+            line-height: 1.8;
+        }
+
+        .quote-source {
+            margin-top: 20px;
+            color: #ff006e;
+            font-weight: 600;
+        }
+
+        @media (max-width: 900px) {
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                text-align: left !important;
+                padding-left: 80px;
+                padding-right: 20px;
+            }
+
+            .timeline-item::before {
+                left: 20px !important;
+                right: auto !important;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .stats-bar {
+                gap: 30px;
+            }
+
+            .stat-value {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Animated gradient background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(123, 44, 191, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 40%, rgba(255, 0, 110, 0.03) 0%, transparent 50%);
+            animation: bgMove 20s ease-in-out infinite;
+        }
+
+        @keyframes bgMove {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-5%, -5%) rotate(5deg); }
+        }
+
+        /* Pulse animation for the final event */
+        .timeline-item.final .timeline-content {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(255, 0, 110, 0.2); }
+            50% { box-shadow: 0 0 30px 10px rgba(255, 0, 110, 0.1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+
+    <div class="container">
+        <header>
+            <h1>The Rise & Fall of NAAREA</h1>
+            <p class="subtitle">A timeline of France's most ambitious nuclear startup — from revolutionary promise to spectacular collapse in just five years</p>
+
+            <div class="stats-bar">
+                <div class="stat">
+                    <div class="stat-value">€90M</div>
+                    <div class="stat-label">Investment Lost</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">100+</div>
+                    <div class="stat-label">Jobs Lost</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">5</div>
+                    <div class="stat-label">Years</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">Reactors Built</div>
+                </div>
+            </div>
+        </header>
+
+        <div class="timeline">
+            <!-- 2020 - Founding -->
+            <div class="timeline-item rise">
+                <div class="timeline-content">
+                    <div class="date">2020</div>
+                    <h3 class="event-title">NAAREA is Born</h3>
+                    <p class="event-description">Jean-Luc Alexandre, a former Airbus executive, founds NAAREA with a bold vision: build compact molten salt reactors that can be transported by truck and deployed anywhere. The XAMR (eXtrasmall Advanced Modular Reactor) promises to revolutionize nuclear energy.</p>
+                    <span class="event-tag">Foundation</span>
+                </div>
+            </div>
+
+            <!-- February 2022 - Macron Speech -->
+            <div class="timeline-item rise">
+                <div class="timeline-content">
+                    <div class="date">February 2022</div>
+                    <h3 class="event-title">Macron's Nuclear Renaissance</h3>
+                    <p class="event-description">President Emmanuel Macron delivers his historic Belfort speech, announcing plans for 6-14 new EPR reactors and €1 billion for innovative nuclear research through the France 2030 program. NAAREA appears perfectly positioned to benefit.</p>
+                    <span class="event-tag">Government Support</span>
+                </div>
+            </div>
+
+            <!-- 2022 - Funding Rounds -->
+            <div class="timeline-item rise">
+                <div class="timeline-content">
+                    <div class="date">2022</div>
+                    <h3 class="event-title">Investor Frenzy</h3>
+                    <p class="event-description">Riding the wave of nuclear enthusiasm, NAAREA secures major funding rounds. The startup attracts prominent investors including Jacques Veyrat's Impala group and the Bettencourt-Meyers family. Total investment will eventually reach €90 million.</p>
+                    <span class="event-tag">Funding</span>
+                </div>
+            </div>
+
+            <!-- 2023 - France 2030 Selection -->
+            <div class="timeline-item peak">
+                <div class="timeline-content">
+                    <div class="date">2023</div>
+                    <h3 class="event-title">France 2030 Phase I Victory</h3>
+                    <p class="event-description">NAAREA is selected among the winners of France 2030's first phase for innovative nuclear reactors. The company receives initial government backing and validation of its technology approach. The future looks bright.</p>
+                    <span class="event-tag">Milestone</span>
+                </div>
+            </div>
+
+            <!-- November 2023 - NuScale Collapse -->
+            <div class="timeline-item fall">
+                <div class="timeline-content">
+                    <div class="date">November 2023</div>
+                    <h3 class="event-title">The NuScale Shockwave</h3>
+                    <p class="event-description">America's most advanced SMR project collapses when NuScale abandons its Idaho plant due to soaring costs. The failure sends shockwaves through global nuclear investment. Private capital for advanced reactors begins drying up worldwide.</p>
+                    <span class="event-tag">Industry Crisis</span>
+                </div>
+            </div>
+
+            <!-- October 2024 - National Assembly Warning -->
+            <div class="timeline-item fall">
+                <div class="timeline-content">
+                    <div class="date">October 2024</div>
+                    <h3 class="event-title">Parliament Sounds the Alarm</h3>
+                    <p class="event-description">The French National Assembly releases a damning report on France 2030's nuclear research funding. It reveals that AMR startups are trapped in a "valley of death" — private investors won't commit without government Phase II funding, which remains stuck in bureaucratic limbo.</p>
+                    <span class="event-tag">Warning Signs</span>
+                </div>
+            </div>
+
+            <!-- March 2025 - Macron Acceleration Order -->
+            <div class="timeline-item fall">
+                <div class="timeline-content">
+                    <div class="date">March 2025</div>
+                    <h3 class="event-title">Too Little, Too Late</h3>
+                    <p class="event-description">President Macron orders the SGPI (government investment secretariat) to accelerate decision-making. But the bureaucracy has already consumed precious time. NAAREA's cash reserves are running dangerously low.</p>
+                    <span class="event-tag">Government Delay</span>
+                </div>
+            </div>
+
+            <!-- September 2025 - Judicial Reorganization -->
+            <div class="timeline-item fall">
+                <div class="timeline-content">
+                    <div class="date">September 2025</div>
+                    <h3 class="event-title">Filing for Protection</h3>
+                    <p class="event-description">NAAREA files for judicial reorganization (redressement judiciaire) at the Commercial Court of Nanterre. CEO Alexandre blames investor hesitancy tied to delays in France 2030's Phase II funding. The clock starts ticking.</p>
+                    <span class="event-tag">Bankruptcy Filing</span>
+                </div>
+            </div>
+
+            <!-- Late 2025 - Eneris Bid -->
+            <div class="timeline-item fall">
+                <div class="timeline-content">
+                    <div class="date">Late 2025</div>
+                    <h3 class="event-title">The Eneris Gambit</h3>
+                    <p class="event-description">Polish energy group Eneris emerges as potential savior, offering to acquire NAAREA. But the bid comes with a devastating assessment: NAAREA's technology has reached an "impasse" and would require a complete restart under new leadership.</p>
+                    <span class="event-tag">Acquisition Attempt</span>
+                </div>
+            </div>
+
+            <!-- January 2026 - Liquidation -->
+            <div class="timeline-item fall final">
+                <div class="timeline-content">
+                    <div class="date">January 2026</div>
+                    <h3 class="event-title">The Final Verdict</h3>
+                    <p class="event-description">The Commercial Court of Nanterre rejects the Eneris bid, citing the company's failure to obtain ASN (nuclear safety authority) approval and lack of credible technical pathway. NAAREA is ordered into liquidation. The dream is over.</p>
+                    <span class="event-tag">Liquidation</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="quote-box">
+            <p class="quote-text">"Le temps du nucléaire est long, mais celui des start-up l'est beaucoup moins."</p>
+            <p class="quote-text" style="margin-top: 15px; font-size: 1.1rem;">(The time of nuclear power is long, but that of startups is much less.)</p>
+            <p class="quote-source">— Le Figaro, January 2026</p>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-dot rise"></div>
+                <span class="legend-text">Rise (2020-2022)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-dot peak"></div>
+                <span class="legend-text">Peak (2023)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-dot fall"></div>
+                <span class="legend-text">Fall (2023-2026)</span>
+            </div>
+        </div>
+
+        <footer>
+            <p>Timeline accompanies "The Meltdown: How France's Most Ambitious Nuclear Startup Burned Through €90 Million and Collapsed in Spectacular Fashion"</p>
+        </footer>
+    </div>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.2
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all timeline items
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            observer.observe(item);
+        });
+
+        // Add staggered animation delay
+        document.querySelectorAll('.timeline-item').forEach((item, index) => {
+            item.style.transitionDelay = `${index * 0.1}s`;
+        });
+
+        // Parallax effect on scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const bgAnimation = document.querySelector('.bg-animation');
+            if (bgAnimation) {
+                bgAnimation.style.transform = `translateY(${scrolled * 0.1}px)`;
+            }
+        });
+
+        // Add hover sound effect placeholder (visual feedback)
+        document.querySelectorAll('.timeline-content').forEach(content => {
+            content.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
+            });
+            content.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
