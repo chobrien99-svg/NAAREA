@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
   <defs>
     <!-- Gradients -->
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -57,137 +57,137 @@
   </defs>
 
   <!-- Background -->
-  <rect width="1200" height="630" fill="url(#bgGrad)"/>
-  <rect width="1200" height="630" fill="url(#bgGlow1)"/>
-  <rect width="1200" height="630" fill="url(#bgGlow2)"/>
+  <rect width="1200" height="800" fill="url(#bgGrad)"/>
+  <rect width="1200" height="800" fill="url(#bgGlow1)"/>
+  <rect width="1200" height="800" fill="url(#bgGlow2)"/>
 
   <!-- Title -->
-  <text x="600" y="65" text-anchor="middle" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="42" font-weight="800" fill="url(#titleGrad)">The Rise &amp; Fall of NAAREA</text>
-  <text x="600" y="95" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" fill="#888">France's most ambitious nuclear startup: 2020-2026</text>
+  <text x="600" y="80" text-anchor="middle" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="48" font-weight="800" fill="url(#titleGrad)">The Rise &amp; Fall of NAAREA</text>
+  <text x="600" y="115" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" fill="#888">France's most ambitious nuclear startup: 2020-2026</text>
 
   <!-- Stats Row -->
-  <g transform="translate(0, 115)">
-    <text x="200" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="28" font-weight="700" fill="#ff006e">€90M</text>
-    <text x="200" y="42" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#666" letter-spacing="2">INVESTMENT LOST</text>
+  <g transform="translate(0, 155)">
+    <text x="200" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="32" font-weight="700" fill="#ff006e">€90M</text>
+    <text x="200" y="46" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#666" letter-spacing="2">INVESTMENT LOST</text>
 
-    <text x="450" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="28" font-weight="700" fill="#ff006e">100+</text>
-    <text x="450" y="42" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#666" letter-spacing="2">JOBS LOST</text>
+    <text x="450" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="32" font-weight="700" fill="#ff006e">100+</text>
+    <text x="450" y="46" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#666" letter-spacing="2">JOBS LOST</text>
 
-    <text x="750" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="28" font-weight="700" fill="#ff006e">5 Years</text>
-    <text x="750" y="42" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#666" letter-spacing="2">DURATION</text>
+    <text x="750" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="32" font-weight="700" fill="#ff006e">5 Years</text>
+    <text x="750" y="46" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#666" letter-spacing="2">DURATION</text>
 
-    <text x="1000" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="28" font-weight="700" fill="#ff006e">0</text>
-    <text x="1000" y="42" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#666" letter-spacing="2">REACTORS BUILT</text>
+    <text x="1000" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="32" font-weight="700" fill="#ff006e">0</text>
+    <text x="1000" y="46" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#666" letter-spacing="2">REACTORS BUILT</text>
   </g>
 
   <!-- Timeline Line -->
-  <line x1="100" y1="280" x2="1100" y2="280" stroke="url(#lineGrad)" stroke-width="4" stroke-linecap="round"/>
+  <line x1="100" y1="340" x2="1100" y2="340" stroke="url(#lineGrad)" stroke-width="4" stroke-linecap="round"/>
 
   <!-- Timeline Events -->
   <!-- 2020 - Founded -->
-  <g transform="translate(100, 280)">
-    <circle cx="0" cy="0" r="12" fill="#1a1a2e" stroke="#00d4ff" stroke-width="3" filter="url(#glowCyan)"/>
-    <text x="0" y="-45" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#00d4ff">2020</text>
-    <text x="0" y="-28" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#ccc">Founded</text>
-    <text x="0" y="35" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#666">XAMR reactor</text>
-    <text x="0" y="47" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#666">concept born</text>
+  <g transform="translate(100, 340)">
+    <circle cx="0" cy="0" r="14" fill="#1a1a2e" stroke="#00d4ff" stroke-width="3" filter="url(#glowCyan)"/>
+    <text x="0" y="-55" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#00d4ff">2020</text>
+    <text x="0" y="-35" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#ccc">Founded</text>
+    <text x="0" y="40" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#666">XAMR reactor</text>
+    <text x="0" y="54" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#666">concept born</text>
   </g>
 
   <!-- 2022 - Macron Speech + Funding -->
-  <g transform="translate(267, 280)">
-    <circle cx="0" cy="0" r="12" fill="#1a1a2e" stroke="#00d4ff" stroke-width="3" filter="url(#glowCyan)"/>
-    <text x="0" y="-45" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#00d4ff">2022</text>
-    <text x="0" y="-28" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#ccc">Macron's Belfort</text>
-    <text x="0" y="35" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#666">France 2030:</text>
-    <text x="0" y="47" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#666">€1B for nuclear</text>
+  <g transform="translate(267, 340)">
+    <circle cx="0" cy="0" r="14" fill="#1a1a2e" stroke="#00d4ff" stroke-width="3" filter="url(#glowCyan)"/>
+    <text x="0" y="-55" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#00d4ff">2022</text>
+    <text x="0" y="-35" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#ccc">Macron's Belfort</text>
+    <text x="0" y="40" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#666">France 2030:</text>
+    <text x="0" y="54" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#666">€1B for nuclear</text>
   </g>
 
   <!-- 2023 - France 2030 Phase I -->
-  <g transform="translate(433, 280)">
-    <circle cx="0" cy="0" r="14" fill="#1a1a2e" stroke="#7b2cbf" stroke-width="4" filter="url(#glowPurple)"/>
-    <text x="0" y="-45" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#7b2cbf">2023</text>
-    <text x="0" y="-28" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#ccc">Phase I Winner</text>
-    <text x="0" y="35" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#666">Peak optimism</text>
-    <text x="0" y="47" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#666">€90M raised</text>
+  <g transform="translate(433, 340)">
+    <circle cx="0" cy="0" r="16" fill="#1a1a2e" stroke="#7b2cbf" stroke-width="4" filter="url(#glowPurple)"/>
+    <text x="0" y="-55" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#7b2cbf">2023</text>
+    <text x="0" y="-35" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#ccc">Phase I Winner</text>
+    <text x="0" y="40" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#666">Peak optimism</text>
+    <text x="0" y="54" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#666">€90M raised</text>
   </g>
 
   <!-- Nov 2023 - NuScale Collapse -->
-  <g transform="translate(567, 280)">
-    <circle cx="0" cy="0" r="12" fill="#1a1a2e" stroke="#ff006e" stroke-width="3" filter="url(#glowPink)"/>
-    <text x="0" y="-45" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#ff006e">NOV 2023</text>
-    <text x="0" y="-28" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#ccc">NuScale Fails</text>
-    <text x="0" y="35" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#666">Global SMR</text>
-    <text x="0" y="47" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#666">investment freezes</text>
+  <g transform="translate(567, 340)">
+    <circle cx="0" cy="0" r="14" fill="#1a1a2e" stroke="#ff006e" stroke-width="3" filter="url(#glowPink)"/>
+    <text x="0" y="-55" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#ff006e">NOV 2023</text>
+    <text x="0" y="-35" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#ccc">NuScale Fails</text>
+    <text x="0" y="40" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#666">Global SMR</text>
+    <text x="0" y="54" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#666">investment freezes</text>
   </g>
 
   <!-- 2024 - National Assembly Warning -->
-  <g transform="translate(700, 280)">
-    <circle cx="0" cy="0" r="12" fill="#1a1a2e" stroke="#ff006e" stroke-width="3" filter="url(#glowPink)"/>
-    <text x="0" y="-45" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#ff006e">OCT 2024</text>
-    <text x="0" y="-28" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#ccc">Parliament Alarm</text>
-    <text x="0" y="35" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#666">"Valley of death"</text>
-    <text x="0" y="47" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#666">funding warning</text>
+  <g transform="translate(700, 340)">
+    <circle cx="0" cy="0" r="14" fill="#1a1a2e" stroke="#ff006e" stroke-width="3" filter="url(#glowPink)"/>
+    <text x="0" y="-55" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#ff006e">OCT 2024</text>
+    <text x="0" y="-35" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#ccc">Parliament Alarm</text>
+    <text x="0" y="40" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#666">"Valley of death"</text>
+    <text x="0" y="54" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#666">funding warning</text>
   </g>
 
   <!-- Sep 2025 - Bankruptcy -->
-  <g transform="translate(867, 280)">
-    <circle cx="0" cy="0" r="12" fill="#1a1a2e" stroke="#ff006e" stroke-width="3" filter="url(#glowPink)"/>
-    <text x="0" y="-45" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#ff006e">SEP 2025</text>
-    <text x="0" y="-28" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#ccc">Bankruptcy Filed</text>
-    <text x="0" y="35" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#666">Judicial</text>
-    <text x="0" y="47" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#666">reorganization</text>
+  <g transform="translate(867, 340)">
+    <circle cx="0" cy="0" r="14" fill="#1a1a2e" stroke="#ff006e" stroke-width="3" filter="url(#glowPink)"/>
+    <text x="0" y="-55" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#ff006e">SEP 2025</text>
+    <text x="0" y="-35" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#ccc">Bankruptcy Filed</text>
+    <text x="0" y="40" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#666">Judicial</text>
+    <text x="0" y="54" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#666">reorganization</text>
   </g>
 
   <!-- Jan 2026 - Liquidation -->
-  <g transform="translate(1033, 280)">
-    <circle cx="0" cy="0" r="16" fill="#1a1a2e" stroke="#ff006e" stroke-width="4" filter="url(#glowPink)"/>
-    <line x1="-6" y1="-6" x2="6" y2="6" stroke="#ff006e" stroke-width="2"/>
-    <line x1="6" y1="-6" x2="-6" y2="6" stroke="#ff006e" stroke-width="2"/>
-    <text x="0" y="-50" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#ff006e">JAN 2026</text>
-    <text x="0" y="-33" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#ccc">Liquidation</text>
-    <text x="0" y="40" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#666">Court rejects</text>
-    <text x="0" y="52" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#666">Eneris bid</text>
+  <g transform="translate(1033, 340)">
+    <circle cx="0" cy="0" r="18" fill="#1a1a2e" stroke="#ff006e" stroke-width="4" filter="url(#glowPink)"/>
+    <line x1="-7" y1="-7" x2="7" y2="7" stroke="#ff006e" stroke-width="2.5"/>
+    <line x1="7" y1="-7" x2="-7" y2="7" stroke="#ff006e" stroke-width="2.5"/>
+    <text x="0" y="-60" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#ff006e">JAN 2026</text>
+    <text x="0" y="-40" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#ccc">Liquidation</text>
+    <text x="0" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#666">Court rejects</text>
+    <text x="0" y="59" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#666">Eneris bid</text>
   </g>
 
   <!-- Phase Labels -->
-  <g transform="translate(0, 370)">
+  <g transform="translate(0, 440)">
     <!-- Rise -->
-    <rect x="100" y="0" width="250" height="24" rx="12" fill="rgba(0,212,255,0.15)"/>
-    <text x="225" y="16" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#00d4ff">RISE</text>
+    <rect x="100" y="0" width="250" height="28" rx="14" fill="rgba(0,212,255,0.15)"/>
+    <text x="225" y="18" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#00d4ff">RISE</text>
 
     <!-- Peak -->
-    <rect x="375" y="0" width="100" height="24" rx="12" fill="rgba(123,44,191,0.15)"/>
-    <text x="425" y="16" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#7b2cbf">PEAK</text>
+    <rect x="375" y="0" width="100" height="28" rx="14" fill="rgba(123,44,191,0.15)"/>
+    <text x="425" y="18" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#7b2cbf">PEAK</text>
 
     <!-- Fall -->
-    <rect x="500" y="0" width="600" height="24" rx="12" fill="rgba(255,0,110,0.15)"/>
-    <text x="800" y="16" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#ff006e">FALL</text>
+    <rect x="500" y="0" width="600" height="28" rx="14" fill="rgba(255,0,110,0.15)"/>
+    <text x="800" y="18" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#ff006e">FALL</text>
   </g>
 
   <!-- Quote Box -->
-  <g transform="translate(100, 430)">
-    <rect x="0" y="0" width="1000" height="80" rx="8" fill="rgba(255,0,110,0.05)" stroke="rgba(255,0,110,0.3)" stroke-width="1"/>
-    <line x1="0" y1="0" x2="0" y2="80" stroke="#ff006e" stroke-width="4"/>
-    <text x="30" y="35" font-family="Inter, sans-serif" font-size="18" font-style="italic" fill="#ccc">"Le temps du nucléaire est long, mais celui des start-up l'est beaucoup moins."</text>
-    <text x="30" y="58" font-family="Inter, sans-serif" font-size="14" font-style="italic" fill="#888">(The time of nuclear power is long, but that of startups is much less.)</text>
-    <text x="920" y="58" text-anchor="end" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#ff006e">— Le Figaro</text>
+  <g transform="translate(100, 520)">
+    <rect x="0" y="0" width="1000" height="100" rx="10" fill="rgba(255,0,110,0.05)" stroke="rgba(255,0,110,0.3)" stroke-width="1"/>
+    <line x1="0" y1="0" x2="0" y2="100" stroke="#ff006e" stroke-width="4"/>
+    <text x="35" y="40" font-family="Inter, sans-serif" font-size="20" font-style="italic" fill="#ccc">"Le temps du nucléaire est long, mais celui des start-up l'est beaucoup moins."</text>
+    <text x="35" y="68" font-family="Inter, sans-serif" font-size="15" font-style="italic" fill="#888">(The time of nuclear power is long, but that of startups is much less.)</text>
+    <text x="965" y="68" text-anchor="end" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#ff006e">— Le Figaro</text>
   </g>
 
   <!-- Footer -->
-  <text x="600" y="560" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#444">NAAREA: eXtrasmall Advanced Modular Reactor (XAMR) — Molten Salt Fast Neutron Technology</text>
+  <text x="600" y="680" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#444">NAAREA: eXtrasmall Advanced Modular Reactor (XAMR) — Molten Salt Fast Neutron Technology</text>
 
   <!-- Legend dots in footer -->
-  <g transform="translate(370, 585)">
-    <circle cx="0" cy="0" r="5" fill="#00d4ff"/>
-    <text x="12" y="4" font-family="Inter, sans-serif" font-size="10" fill="#666">Rise</text>
+  <g transform="translate(370, 720)">
+    <circle cx="0" cy="0" r="6" fill="#00d4ff"/>
+    <text x="14" y="4" font-family="Inter, sans-serif" font-size="11" fill="#666">Rise</text>
 
-    <circle cx="80" cy="0" r="5" fill="#7b2cbf"/>
-    <text x="92" y="4" font-family="Inter, sans-serif" font-size="10" fill="#666">Peak</text>
+    <circle cx="90" cy="0" r="6" fill="#7b2cbf"/>
+    <text x="104" y="4" font-family="Inter, sans-serif" font-size="11" fill="#666">Peak</text>
 
-    <circle cx="160" cy="0" r="5" fill="#ff006e"/>
-    <text x="172" y="4" font-family="Inter, sans-serif" font-size="10" fill="#666">Fall</text>
+    <circle cx="180" cy="0" r="6" fill="#ff006e"/>
+    <text x="194" y="4" font-family="Inter, sans-serif" font-size="11" fill="#666">Fall</text>
 
-    <text x="280" y="4" font-family="Inter, sans-serif" font-size="10" fill="#555">|</text>
-    <text x="300" y="4" font-family="Inter, sans-serif" font-size="10" fill="#555">2020-2026</text>
+    <text x="280" y="4" font-family="Inter, sans-serif" font-size="11" fill="#555">|</text>
+    <text x="300" y="4" font-family="Inter, sans-serif" font-size="11" fill="#555">2020-2026</text>
   </g>
 </svg>
